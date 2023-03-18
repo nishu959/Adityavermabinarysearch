@@ -1,35 +1,30 @@
-a = list(map(int, input().split()))
-#code is same as peak element
+#Exact same code as peak element
 
-start = 0
-end = len(a)-1
+class Solution:
+    def findPeakElement(self, nums: List[int]) -> int:
+        start = 0
+        n = len(nums)
+        end = n-1
+
+        if len(nums)==1:
+            return 0
 
 
-while( start<=end):
-  mid = start + (end-start)//2
-  if len(a)==1:
-    print(0)
-    break
-  if mid>0 and mid<len(a)-1:
-    if a[mid]>a[mid-1] and a[mid]>a[mid+1]:
-      print(mid) 
-      break
-    elif a[mid-1]>a[mid]:
-      end = mid-1
-    else:
-      start = mid+1
-      
-  elif mid==0:
-    if a[0]>a[1]:
-      print(0) 
-      break
-    else:
-      print(1)
-      break
-  elif mid==len(a)-1:
-    if a[len(a)-1]>a[len(a)-2]:
-      print(len(a)-1) 
-      break
-    else:
-      print(len(a)-2) 
-      break
+        if nums[0]>nums[1]:
+            return 0
+
+        if nums[n-1]>nums[n-2]:
+            return n-1
+
+        while start<=end:
+
+            mid = start + (end-start)//2
+
+            if nums[mid]>nums[mid-1] and nums[mid]>nums[mid+1]:
+                return mid
+
+            if nums[mid-1]>nums[mid]:
+                end = mid-1
+
+            elif nums[mid+1]>nums[mid]:
+                start = mid+1
