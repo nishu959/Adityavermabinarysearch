@@ -8,7 +8,7 @@ n = len(a)-1
 
 while (start<=end):
   
-  if a[start] <= a[end]:
+  if a[start] < a[end]:
     ans =start
     #print(ans)
     break
