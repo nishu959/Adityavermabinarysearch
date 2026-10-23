@@ -1,21 +1,20 @@
-#Exact same code as peak element
-
 class Solution:
     def findPeakElement(self, nums: List[int]) -> int:
-        start = 0
+        
         n = len(nums)
-        end = n-1
 
-        if len(nums)==1:
+        if n==1:
             return 0
 
-
+        
         if nums[0]>nums[1]:
             return 0
 
         if nums[n-1]>nums[n-2]:
             return n-1
-
+            
+        start = 1
+        end = n-2
         while start<=end:
 
             mid = start + (end-start)//2
