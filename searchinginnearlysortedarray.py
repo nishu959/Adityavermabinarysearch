@@ -22,7 +22,7 @@ def fun(a, x):
         if x > a[mid]:
             start = mid + 2
             
-        if x< a[mid]:
+        else x< a[mid]:
             end= mid-2
             
     return -1
