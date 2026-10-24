@@ -3,8 +3,7 @@ a = list(map(int,input().split()))
 k = int(input())
 
 def isvalid(a, mid, k):
-  if len(a)<k:
-    return -1
+  
   student = 1
   s =0
   for i in a:
@@ -18,7 +17,8 @@ def isvalid(a, mid, k):
       
 
 
-
+if len(a)<k:
+    print(-1)
 start = max(a)
 end = sum(a)-min(a)
 
